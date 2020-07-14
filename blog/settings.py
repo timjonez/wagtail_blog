@@ -41,6 +41,20 @@ EMAIL_HOST_PASSWORD = '73a46pdb35odihfg546cdb1214cbe8'
 # Application definition
 
 INSTALLED_APPS = [
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
+    'modelcluster',
+    'taggit',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -66,6 +80,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'blog.urls'
@@ -145,9 +160,11 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = 'home'
 
 MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
-MEDIA_ROOT = '/home/timjonez/missions_blog/static/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+#MEDIA_ROOT = '/home/timjonez/missions_blog/static/media'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 INTERNAL_IPS = ['127.0.0.1']
+
+WAGTAIL_SITE_NAME = 'Jones Family Website'
