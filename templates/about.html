@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<p></p><h3>Our Family</h3>
+<p><br></p><p><img class="aboutpicture" src="/media/django-summernote/2020-04-14/493a9f9c-a4ad-42f2-a947-cd8a50054b64.JPG" style="width: 25%; float: left;">
+</p><h3>Timothy A. Jones</h3><p>I graduated from Master’s Baptist College with a Bachelors in Pastoral Studies.
+  I enjoy programming, and using it to enable us to reach people with the gospel. I also enjoy fishing and hiking,
+  especially mountaineering, and learning new skills.</p><p><br></p><p><br></p><p><br></p><p><br></p><p><br></p>
+  <h3><img class="aboutpicture" src="/media/django-summernote/2020-04-14/a8153f66-05bc-4b00-b464-98b00c8077af.JPG" style="width: 25%; float: left;">Sarah L. Jones</h3>
+  <div>I enjoy learning ASL &amp; I love to spend time with my family. I have an amazing
+    husband and twin girls that were not a surprise, but rather an answer to prayer. I am
+    constantly reminded of God’s sufficient grace as I look at the family God has given to
+    me, &amp; as I live each day able to do many things I was once unable to, due to my health.
+    Although it can be challenging, I greatly enjoy the blessings of being a wife &amp; a mom to twins.
+    My greatest desire is to serve the Lord to the best of my ability whether that be here in the States
+    or on the mission field in a foreign</div>
+    <div>country.</div>
+    <div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div>
+    <h3><img class="aboutpicture" src="/media/django-summernote/2020-04-14/10a934db-f9a3-4cfa-8750-fa5d784bb8c9.jpg" style="width: 25%; float: left;" >Joanna G. Jones</h3><div>
+      <div>I am the firstborn &amp; my favorite thing to do is bounce whether laying on the ground, sitting
+        on the couch, or standing in a jumper. I was born with bilateral strabismus &amp; had a
+        corrective eye surgery at just 6 months old. Thankfully, my eyes are now perfectly aligned, &amp;
+        I can see just as well as my sister.
+      </div></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div>
+      <div><img class="aboutpicture" src="/media/django-summernote/2020-04-14/47a9c900-b4ef-4603-9592-3e91c738be81.jpg" style="width: 25%; float: left;" >
+        <h3>Susanna G. Jones</h3></div><div><div>I was born just minutes after my sister, and yet
+          I have been the bigger sister since long before we were born. I love to eat, &amp; for some
+          strange reason, I have a bit of a foot fetish; it doesn’t matter whose foot it is, I want
+          to play with it. Although I love my mom, I am a major daddy’s girl, and I get very excited
+          whenever my daddy comes into sight.</div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><div><br></div><h4>Anniversary: August 18th</h4><div><br></div><h4>Birthdays:</h4><h4>Timothy - May 9th</h4><h4>Sarah - February 8th<h4>Joanna - May 11th, 2019</h4><h4>Susanna - May 11th, 2019</h4></h4><div><br></div></div><p>
+          </p>
+
+{% else %}
+<div class="jumbotron">
+        <style>
+          .imagebackground{background-image:none;}
+        </style>
+    <div class="loginsignup">
+      <h2>Please Log In or Sign Up</h2>
+      <a class="btn btn-primary btn-lg" href="{% url 'users:login'%}" role='button'>Log In</a>
+      <a class="btn btn-primary btn-lg" href="{% url 'users:signup'%}" role='button'>Sign Up</a>
+    </div>
+</div>
+
+
+
+
+{% endif %}
+
+{% endblock %}

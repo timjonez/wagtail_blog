@@ -1,0 +1,3 @@
+Email notification for updates
+Password reset/change
+Integration with React or Angular

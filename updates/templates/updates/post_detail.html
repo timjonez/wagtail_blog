@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+
+    <h1 class="posttitle">{{post.title}}</h1>
+
+    {%if post.published_date %}
+      <div class="postdate">
+        <br>
+        <h4>Author: {{post.author}}</h4>
+        {{post.published_date}}
+      </div>
+    {% else %}
+       <a class="btn btn-outline-dark" href="{% url 'updates:post_publish' pk=post.pk%}">Publish</a>
+    {% endif%}
+    <div class="container">
+      <div class="postcontent">
+        <p>{{ post.text|safe|linebreaksbr}}</p>
+      </div>
+
+    </div>
+
+    {% if user.is_superuser %}
+      <a class="btn btn-primary" href="{% url 'updates:post_edit' pk=post.pk %}"><span class="fa fa-pencil"></span></a>
+      <a class="btn btn-primary" href="{% url 'updates:post_remove' pk=post.pk %}"><span class="fa fa-remove"></span></a>
+    {% endif %}
+
+<hr>
+<a class="btn btn-primary btn-comment" href="{% url 'updates:add_comment_to_post' pk=post.pk %}">Comment</a>
+
+<div class="container">
+  {% for comment in post.comments.all%}
+  <br>
+      {% if user.is_superuser or comment.approved_comments %}
+          {% if not comment.approved_comments %}
+              <a class="btn btn-primary" href="{% url 'updates:comment_remove' pk=comment.pk %}"><span class="fa fa-remove"></span></a>
+              <a class="btn btn-primary" href="{% url 'updates:comment_approve' pk=comment.pk %}"><span class="fa fa-check"></span></a>
+          {% endif %}
+            Comment by: {{comment.author}}, on {{comment.created_date|date:'m/d/y'}}
+          {{comment.text|safe|linebreaks }}
+
+
+
+      {% endif %}
+  {% empty %}
+    <p>Be the first to comment!</p>
+  {% endfor%}
+
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block content%}
+
+  <h1>{{prayer.title}}</h1>
+  <p>{{prayer.content}}</p>
+
+{% if user.is_superuser %}
+  <a class="btn btn-primary" href="{% url 'prayers:prayer_edit' pk=prayer.pk%}"><span class="fa fa-pencil"></span></a>
+  <a class="btn btn-primary" href="{% url 'prayers:prayer_remove' pk=prayer.pk%}"><span class="fa fa-remove"></span></a>
+{% endif %}
+
+{% endblock%}

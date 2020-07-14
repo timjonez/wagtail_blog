@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="container postlist">
+
+    {% for post in post_list %}
+        <div class="post">
+          <h1><a href="{% url 'updates:post_detail' pk=post.pk%}">{{ post.title }}</a></h1>
+          <div class="date">
+              <p>Published on: {{ post.published_date|date:'m/d/yy'}}</p>
+              <p>{{post.text|safe|truncatewords:30}}</p>
+          </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

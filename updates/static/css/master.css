@@ -1,0 +1,79 @@
+body{
+  font-family: 'Merriweather', serif;
+}
+
+.imagebackground{
+  background-image: url('media/mountian.jpg');
+  background-position: top;
+  background-size: cover;
+  background-repeat: repeat-x;
+}
+
+.navbar{
+  background-color:  rgba(230, 247, 255, .8);
+  padding: 10px;
+}
+
+.centerstage{
+  padding-top: 20px;
+  text-align: center;
+
+
+}
+
+.posttitle{
+  margin-top: 15px;
+  font-size: 3em;
+  text-align: center;
+}
+
+.postdate{
+  text-align: center;
+}
+
+.postlist{
+  margin-top: 35px;
+}
+
+.indexfooter{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(230, 247, 255, .8);
+  opacity: .90;
+  text-align: center;
+  padding: 10px;
+  font-size: .90em;
+}
+
+.contentblock{
+  background-color: rgba(255, 255, 255, .65);
+  padding: 40px;
+}
+
+
+.element{
+  background-color: lighten(#0074d9, 20);
+  opacity: .5;
+  padding: 20px;
+  color: rgba(255,255,255,.9);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.loginsignup{
+  text-align: center;
+}
+
+/*Contact us styling */
+.contactpage{
+  text-align: center;
+}
+
+.aboutpicture{
+  border-radius: 20px;
+  margin-right: 10px;
+}

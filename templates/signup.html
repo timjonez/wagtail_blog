@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+
+{% load bootstrap4 %}
+
+
+{% block content %}
+
+
+    {% if messages %}
+      {% for message in messages%}
+          <div class="alert alert-dark" role="alert">
+
+            {{message}}
+          </div>
+
+      {% endfor %}
+    {% endif %}
+
+
+<style>
+  .imagebackground{background-image:none;}
+</style>
+
+  <div class="container">
+    <h1>Sign up</h1>
+    <form class="form" method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      {% buttons %}
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      {% endbuttons %}
+
+    </form>
+  </div>
+
+
+{%endblock%}

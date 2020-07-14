@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+  {% for prayer in prayer_list %}
+
+    <div class="prayer">
+       <a href="{% url 'prayers:prayer_detail' pk=prayer.pk%}"><h3>{{prayer.title|safe}}</h3></a>
+      <p>{{prayer.date|date:'m-d-y'}}</p>
+      <p>{{prayer.content|truncatewords:30}}</p>
+    </div>
+
+
+  {% endfor%}
+
+    {% if user.is_superuser %}
+      <a class="btn btn-primary" href="{% url 'prayers:create_prayer'%}">Add</a>
+    {% endif%}
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+    <link rel="stylesheet" href="email_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">New Post!</h1>
+        <p>The Jones have finally found the time to write down all the recent events that they've experienced.
+            You should go read it before you forget; After all, you never know what those crazies have been up to!</p>
+        <h3>Click <a href="https://www.jonezfam.com/update/post/{{id}}">here</a> to read it
+        </h3>
+    </div>
+    <div>
+        <p>If you don't want emails for this kind of thing, click <a
+                href="https://www.jonezfam.com/users/email/{{email}}/">here</a> to change your email preferences.</p>
+    </div>
+
+</body>
+
+</html>
